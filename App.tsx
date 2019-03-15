@@ -1,56 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import {
-  createAppContainer,
-  createMaterialTopTabNavigator
-} from "react-navigation";
+import { View } from "react-native";
+import AppIndex from "./components/TabBar";
+import Firebase from "./helpers/firebase";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+Firebase.init();
 
-const Album = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Hello from Album page!</Text>
-    </View>
-  );
-};
-
-const Library = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Hello from Library page!</Text>
-    </View>
-  );
-};
-
-const appNavigator = createMaterialTopTabNavigator(
-  {
-    Album,
-    Library
-  },
-  {
-    tabBarOptions: {
-      style: {
-        height: "10%",
-        paddingTop: "6%"
-      }
-    }
-  }
-);
-
-const AppIndex = createAppContainer(appNavigator);
-
-export default () => {
+const App: React.FC = () => {
   return (
     <View style={{ flex: 1 }}>
       <AppIndex />
     </View>
   );
 };
+
+export default App;
