@@ -808,7 +808,17 @@
     react-native-safe-area-view "^0.13.0"
     react-native-screens "^1.0.0 || ^1.0.0-alpha"
 
-"@types/fbemitter@^2.0.32":
+"@types/expo@^32.0.8":
+  version "32.0.8"
+  resolved "https://registry.yarnpkg.com/@types/expo/-/expo-32.0.8.tgz#e9dd11d8b6466ce2bb8a37aaeb1c0e2f988d3965"
+  integrity sha512-dFMOYqvdeXuFZtn0X/d4rXBFbYQkG1mQVp/FJSkYcajDHdGnRex8pJzp9umIA6AylSw3gWwfppDsPNtwE7UHGA==
+  dependencies:
+    "@types/fbemitter" "*"
+    "@types/react" "*"
+    "@types/react-native" "*"
+    react-native-maps "*"
+
+"@types/fbemitter@*", "@types/fbemitter@^2.0.32":
   version "2.0.32"
   resolved "https://registry.yarnpkg.com/@types/fbemitter/-/fbemitter-2.0.32.tgz#8ed204da0f54e9c8eaec31b1eec91e25132d082c"
   integrity sha1-jtIE2g9U6cjq7DGx7skeJRMtCCw=
@@ -4937,6 +4947,11 @@ react-native-gesture-handler@~1.0.14:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
+
+react-native-maps@*:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.23.0.tgz#edbfdcad0e42190627eb1c8067eaba5965c8f81e"
+  integrity sha512-qxOIQGsDtQXQlSJdXMW1wg8pvLaVYdbiIolB7tZTTgTGgIA/hDxXwZbQZ08c4KDD6/VTk8krfd1APaHkqvh6og==
 
 react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
