@@ -29,11 +29,16 @@ const registerForPushNotifications = async () => {
   // Get the token that uniquely identifies this device
   let token = await Notifications.getExpoPushTokenAsync();
 
+  Notifications.addListener(() => console.log("New notif"));
+
   // POST the token to your backend server from where you can retrieve it to send push notifications.
   try {
-    await Firebase.firestore.collection("tokens").add({
-      token
-    });
+    await Firebase.firestore
+      .collection("tokens")
+      .doc(token.slice(18, 40))
+      .set({
+        token
+      });
     console.log("Token saved!");
   } catch (e) {
     throw e;

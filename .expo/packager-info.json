@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://6t-dmh.efichot.ts-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.6t-dmh.efichot.ts-app.exp.direct",
+  "ngrokPid": 49284,
   "webpackServerPort": null
 }
