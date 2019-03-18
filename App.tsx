@@ -1,4 +1,5 @@
-import { Notifications, Permissions } from "expo";
+import { Font, Notifications, Permissions } from "expo";
+import { Root, Toast } from "native-base";
 import React from "react";
 import { View } from "react-native";
 import AppIndex from "./components/TabBar";
@@ -32,7 +33,14 @@ const registerForPushNotifications = async () => {
   // If we want to do something with the notification when the app
   // is active, we need to listen to notification events and
   // handle them in a callback
-  Notifications.addListener(notif => console.log(notif.data.message));
+  Notifications.addListener(notif => {
+    Toast.show({
+      text: notif.data.message,
+      buttonText: "Okay",
+      buttonTextStyle: { color: "#008000" },
+      buttonStyle: { backgroundColor: "#5cb85c" }
+    });
+  });
 
   // POST the token to your backend server from where you can retrieve it to send push notifications.
   try {
@@ -48,12 +56,22 @@ const registerForPushNotifications = async () => {
   }
 };
 
+const loadAsync = async () => {
+  await Font.loadAsync({
+    Roboto: require("native-base/Fonts/Roboto.ttf"),
+    Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+  });
+};
+
 registerForPushNotifications();
+loadAsync();
 
 const App: React.FC = () => {
   return (
     <View style={{ flex: 1 }}>
-      <AppIndex />
+      <Root>
+        <AppIndex />
+      </Root>
     </View>
   );
 };
