@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19003,
+  "packagerPid": 52174,
   "expoServerNgrokUrl": "https://6t-dmh.efichot.ts-app.exp.direct",
   "packagerNgrokUrl": "https://packager.6t-dmh.efichot.ts-app.exp.direct",
-  "ngrokPid": 49284,
+  "ngrokPid": 52185,
   "webpackServerPort": null
 }

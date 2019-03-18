@@ -29,7 +29,10 @@ const registerForPushNotifications = async () => {
   // Get the token that uniquely identifies this device
   let token = await Notifications.getExpoPushTokenAsync();
 
-  Notifications.addListener(() => console.log("New notif"));
+  // If we want to do something with the notification when the app
+  // is active, we need to listen to notification events and
+  // handle them in a callback
+  Notifications.addListener(notif => console.log(notif.data.message));
 
   // POST the token to your backend server from where you can retrieve it to send push notifications.
   try {

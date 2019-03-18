@@ -15,10 +15,14 @@ exports.sendPushNotification = functions
       docs.forEach(async doc => {
         await axios.post("https://exp.host/--/api/v2/push/send", {
           to: doc.data().token,
-          body: "Hello from https call!!"
+          body: "Hello from https call!!",
+          data: {
+            message: "I'm a local notification!"
+          }
         });
         console.log("Notification send!");
       });
+      res.send("Notification send");
     } catch (error) {
       throw error;
     }
